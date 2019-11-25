@@ -1,7 +1,14 @@
 require "minitest/autorun"
 require_relative "../lib/wheel"
+require_relative "diameterizable_interface_test"
 
 class WheelTest < Minitest::Test
+  include DiameterizableInterfaceTest
+
+  def setup
+    @wheel = @object = Wheel.new(26, 1.5)
+  end
+
   def test_calculates_diameter
     wheel = Wheel.new(26, 1.5)
 
